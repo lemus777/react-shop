@@ -1,0 +1,72 @@
+@use './-vars.scss';
+
+.login {
+  display: grid; /*esta linea y siguiente centran todo el contenido dentro de login*/
+  place-items: center;
+
+  width: 100%; /*esta linea y siguiente nos dice que es 100% de ancho y altura todo lo que visualizamos*/
+  height: 100vh;
+}
+.form-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /*distribuye las filas del formulario*/
+
+  width: 300px;
+}
+.logo {
+  display: none; /*se oculta porque en nuestro diseño no se ve en pc, se hará visible en version movil*/
+  width: 150px;
+  margin-bottom: 48px;
+  justify-self: center; /*centra nuestro logo*/
+}
+.title {
+  font-size: var(--lg); /*usamos la variable declarada en root para tamaño grande*/
+  margin-bottom: 12px;
+  text-align: center;
+}
+.subtitle {
+  color: var(--very-light-pink);
+  font-size: var(--md);
+  font-weight: 300;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+.form {
+  display: flex;
+  flex-direction: column; /*esta linea y la anterior hace que nuestras label e input fields se distribuyan en columna*/
+}
+.label {
+  font-size: var(--sm);
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.input {
+  height: 30px;
+  font-size: var(--md);
+  padding: 6px;
+  margin-bottom: 12px;
+  background-color: var(--text-input-field);
+  border: none;
+  border-radius: 8px;
+}
+.primary-button { /*aqui definimos lo comun a los botones*/
+  width: 100%;
+  height: 50px;
+  font-size: var(--md);
+  font-weight: bold;
+  color: var(--white);
+  background-color: var(--hospital-green);
+  border-radius: 8px;
+  border: none;
+  cursor: pointer; /*como es un boton queremos que el raton por encima cambie*/
+}
+.login-button { /*usamos esto para definir el margen especifico del boton de login con su segunda clase*/
+  margin-top: 12px;
+  margin-bottom: 32px;
+}
+@media (max-width: 640px) { /*responsive: esto hace efecto en pantallas de 640 píxeles e inferiores (moviles)*/
+  .logo {
+      display: block; /*en dispositivos moviles queremos que se muestre el logo*/
+  }
+}
