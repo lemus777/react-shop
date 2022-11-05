@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '@styles/Header.scss';
+import { Menu } from '@components/Menu';
 import menu from '@icons/icon_menu.svg';
 import logo from '@logos/logo_yard_sale.svg';
 import shoppingCart from '@icons/icon_shopping_cart.svg';
 
 const Header = () => {
+  const [toggle, setToggle] = useState(false);
+
+  const handleToggle = () => {
+    setToggle(!toggle); // nos cambia toggle al valor opuesto al que tenga en el momento de usar handleToggle
+  }
   return (
     <nav>
       <img src={menu} alt="menu" className="menu" />
@@ -33,13 +39,18 @@ const Header = () => {
       </div>
       <div className="navbar-right">
         <ul>
-          <li className="navbar-email">platzi@example.com</li>
+          <li className="navbar-email" onClick={handleToggle}>
+            platzi@example.com
+          </li>
           <li className="navbar-shopping-cart">
             <img src={shoppingCart} alt="shopping cart" />
             <div>2</div>
           </li>
         </ul>
       </div>
+      {toggle && <Menu />}
+      {/*Las llaves las usamos para poder escribir código JS en la parte de html*/}
+      {/*si existe toggle (es decir, es true) entonces (&&) mostramos nuestro componente menu*/}
     </nav>
   );
 }

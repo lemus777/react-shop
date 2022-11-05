@@ -6,6 +6,9 @@
 	border: 1px solid var(--very-light-pink);
 	border-radius: 6px;
 	padding: 20px 20px 0 20px;
+	position: absolute; /* desancla nuestro menú de la posición en la que sale por defecto (que es relative) */
+	top: 60px; /* nos lo coloca debajo de la barra del header */
+	right: 50px; /* no lo coloca a este margen de la derecha */
 }
 .Menu ul {
 	list-style: none;
@@ -32,4 +35,9 @@
 	text-decoration: none;
 	margin-bottom: 20px;
 	display: inline-block;
+}
+@media (max-width: 640px) {
+	.Menu {
+		right: 0;
+	}
 }
