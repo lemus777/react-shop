@@ -23,15 +23,17 @@ const MyOrder = () => {
 				{state.cart.map((product, index) => (
 					<OrderItem indexValue={index} product={product} key={index}/>
 				))}
-				<div className="order">
-					<p>
-						<span>Total</span>
-					</p>
-					<p>{sumTotal()}€</p>
+				<div className='order-total'>
+					<div className="order">
+						<p>
+							<span>Total</span>
+						</p>
+						<p>{sumTotal()}€</p>
+					</div>
+					<button className="primary-button">
+						Checkout
+					</button>
 				</div>
-				<button className="primary-button">
-					Checkout
-				</button>
 			</div>
 		</aside>
 	);

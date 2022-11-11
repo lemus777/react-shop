@@ -2,15 +2,30 @@
 
 .MyOrder {
 	width: 360px;
+	position: absolute;
 	padding: 24px;
 	box-sizing: border-box;
-	position: absolute;
 	right: 0;
-	background-color: white;
+	background-color: var(--white);
 	top: 60px;
-	bottom: 0;
 	border-radius: 6px;
 	border: 1px solid var(--very-light-pink);
+	height: 90vh;
+	animation: swipeLeft .40s;
+	display: flex;
+	flex-direction: column;
+}
+.my-order-content{
+	max-height: 80%;
+	overflow: auto;
+}
+.my-order-content::-webkit-scrollbar{
+	display: none;
+}
+.order-total {
+	position: sticky;
+	bottom: 4px;
+	background-color: white;
 }
 .title-container {
 	display: flex;
@@ -56,6 +71,7 @@
 	font-size: var(--md);
 	font-weight: bold;
 	height: 50px;
+	align-self: center;
 }
 @media (max-width: 640px) {
 	.MyOrder {

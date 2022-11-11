@@ -9,6 +9,7 @@
 	position: absolute; /* desancla nuestro menú de la posición en la que sale por defecto (que es relative) */
 	top: 60px; /* nos lo coloca debajo de la barra del header */
 	right: 50px; /* no lo coloca a este margen de la derecha */
+	background-color: white;
 }
 .Menu ul {
 	list-style: none;
